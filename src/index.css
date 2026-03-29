@@ -7,7 +7,7 @@
 
   color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--bg-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,11 +30,11 @@
   --color-accent: #ffb400;
 
   /* Backgrounds */
-  --bg-primary: #242424;
-  --bg-secondary: #1a1a1a;
-  --bg-accent: #313244;
-  --bg-card: #22223b;
-  --bg-input: #2a2a40;
+  --bg-primary: #0f1930;
+  --bg-secondary: #091328;
+  --bg-accent: #141f38;
+  --bg-card: #192540;
+  --bg-input: #40485d;
 
   /* Text */
   --text-primary: #fff;
@@ -44,6 +44,9 @@
 
   /* Border */
   --border-color: #353535;
+
+  --glass-blur: blur(8px);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 [data-theme="light"] {
@@ -81,6 +84,9 @@
 
   /* Border */
   --border-color: #e5e7eb;
+
+  --glass-blur: blur(8px);
+  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 a {
@@ -112,12 +118,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-primary);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
+  background-color: var(--color-primary-dark);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 button:focus,
 button:focus-visible {

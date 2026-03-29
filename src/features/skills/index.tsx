@@ -8,30 +8,79 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
+  FaVuejs,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiMongodb,
   SiJest,
   SiRedux,
   SiNextdotjs,
+  SiNuxt,
   SiTypescript,
+  SiQuasar,
+  SiAntdesign,
+  SiExpress,
+  SiPostgresql,
+  SiMysql,
+  SiVercel,
+  SiDocker,
+  SiNetlify,
+  SiSwagger,
+  SiPinia
 } from "react-icons/si";
 import "./styles.scss";
 
-const skills = [
-  { name: "Java", icon: FaJava },
-  { name: "HTML", icon: FaHtml5 },
-  { name: "CSS", icon: FaCss3Alt },
-  { name: "JavaScript", icon: FaJs },
-  { name: "React.js", icon: FaReact },
-  { name: "Node.js", icon: FaNodeJs },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "Jest", icon: SiJest },
-  { name: "Git", icon: FaGitAlt },
-  { name: "GitHub", icon: FaGithub },
-  { name: "Redux Toolkit", icon: SiRedux },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "TypeScript", icon: SiTypescript },
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: [
+      { name: "Java", icon: FaJava },
+      { name: "JavaScript", icon: FaJs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "HTML", icon: FaHtml5 },
+      { name: "CSS", icon: FaCss3Alt },
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React.js", icon: FaReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Vue.js", icon: FaVuejs },
+      { name: "Nuxt.js", icon: SiNuxt },
+    ],
+  },
+  {
+    title: "UI & State Management",
+    skills: [
+      { name: "Redux", icon: SiRedux },
+      { name: "Pinia", icon: SiPinia },
+      { name: "Swagger", icon: SiSwagger },
+      { name: "Ant Design", icon: SiAntdesign },
+      { name: "Quasar", icon: SiQuasar },
+    ],
+  },
+  {
+    title: "Backend & DB",
+    skills: [
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "PostgreSQL", icon: SiPostgresql },
+    ],
+  },
+  {
+    title: "Tools & DevOps",
+    skills: [
+      { name: "Git", icon: FaGitAlt },
+      { name: "GitHub", icon: FaGithub },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Netlify", icon: SiNetlify },
+      { name: "Docker", icon: SiDocker },
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -84,20 +133,33 @@ export default function Skills() {
         <div ref={headerRef} className="skills__header">
           <h2 className="skills__title">Technical Skills</h2>
           <p className="skills__description">
-            A showcase of my technical expertise and tools I work with
+            Continuously learning and adapting to new technologies to stay at
+            the forefront of the industry.
           </p>
         </div>
 
-        <div className="skills__grid">
-          {skills.map((skill, index) => (
-            <div
-              key={skill.name}
-              ref={(el) => (itemRefs.current[index] = el)}
-              className="skills__item"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <skill.icon className="skills__icon" />
-              <h3 className="skills__name">{skill.name}</h3>
+        <div className="skills__categories">
+          {skillCategories.map((category, catIndex) => (
+            <div key={category.title} className="skills__category">
+              <h3 className="skills__category-title">{category.title}</h3>
+
+              <div className="skills__grid">
+                {category.skills.map((skill, index) => {
+                  const globalIndex = catIndex * 10 + index; // for animation delay
+
+                  return (
+                    <div
+                      key={skill.name}
+                      ref={(el) => (itemRefs.current[globalIndex] = el)}
+                      className="skills__item"
+                      style={{ animationDelay: `${globalIndex * 0.08}s` }}
+                    >
+                      <skill.icon className="skills__icon" />
+                      <h3 className="skills__name">{skill.name}</h3>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           ))}
         </div>

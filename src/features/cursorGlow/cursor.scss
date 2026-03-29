@@ -1,0 +1,25 @@
+#cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  // smooth movement
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out;
+
+  // glow effect
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(99, 102, 241, 0.08) 40%,
+    transparent 80%
+  );
+
+  // optional blur for softer look
+  filter: blur(40px);
+}

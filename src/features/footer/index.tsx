@@ -1,5 +1,6 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "./styles.scss";
+import { SiFiverr } from "react-icons/si";
 
 interface SocialLink {
   icon: JSX.Element;
@@ -17,6 +18,16 @@ const socialLinks: SocialLink[] = [
     icon: <FaLinkedin />,
     url: "https://linkedin.com/in/gowtham1809",
     label: "LinkedIn",
+  },
+  {
+    icon: <FaEnvelope />,
+    url: "mailto:gowthamrajezhumalai@gmail.com",
+    label: "LinkedIn",
+  },
+  {
+    icon: <SiFiverr />,
+    url: "https://www.fiverr.com/gowthamraj_re",
+    label: "Fiverr",
   },
   // {
   //   icon: <FaTwitter />,
@@ -37,19 +48,19 @@ export default function Footer() {
               <a
                 key={index}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="footer__social-link"
                 aria-label={link.label}
+                {...(link.url.startsWith("mailto:")
+                  ? {}
+                  : { target: "_blank", rel: "noopener noreferrer" })}
               >
                 {link.icon}
               </a>
             ))}
           </div>
           <p className="footer__copyright">
-            © {currentYear} Gowthamraj. All rights reserved.
+            © {currentYear} Gowthamraj. All rights reserved. Built with Love
           </p>
-          <p className="footer__text">Built with React & TypeScript</p>
         </div>
       </div>
     </footer>

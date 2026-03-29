@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import { FaGithub, FaLinkedin} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import{SiFiverr} from "react-icons/si";
 import "./styles.scss";
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (heroRef.current) {
@@ -34,13 +35,17 @@ export default function Hero() {
     <section ref={heroRef} className="hero">
       <div className="hero__container">
         <div ref={textRef} className="hero__content">
+          <p className="hero__badge">
+            Open to Opportunities, Let's work together.
+          </p>
           <h1 className="hero__title">
-            Hi, I'm <span className="hero__name">GowthamRaj</span>
+            Hi, I'm <span className="hero__name">Gowthamraj</span>
             <br />
             Full Stack Developer
           </h1>
           <p className="hero__description">
-            I build exceptional and accessible digital experiences for the web.
+            Explore my portfolio and reach out to discuss opportunities or ways
+            we can work together.
           </p>
           <div className="hero__social">
             <a
@@ -60,6 +65,22 @@ export default function Hero() {
               aria-label="LinkedIn Profile"
             >
               <FaLinkedin />
+            </a>
+            <a
+              href="mailto:gowthamrajezhumalai@gmail.com"
+              className="hero__social-link"
+              aria-label="Email"
+            >
+              <FaEnvelope />
+            </a>
+            <a
+              href="https://www.fiverr.com/gowthamraj_re"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__social-link"
+              aria-label="Fiverr Profile"
+            >
+              <SiFiverr />
             </a>
             {/* <a
               href="https://www.naukri.com/mnjuser/profile?id=&altresid"

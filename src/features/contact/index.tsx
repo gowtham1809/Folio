@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "./styles.scss";
 
+
 interface ContactInfo {
   icon: JSX.Element;
   title: string;
@@ -15,8 +16,8 @@ const contactInfo: ContactInfo[] = [
   {
     icon: <FaEnvelope />,
     title: "Email",
-    content: "gowthamrajmamundi2002@gmail.com",
-    link: "mailto:gowthamrajmamundi2002@gmail.com",
+    content: "gowthamrajezhumalai@gmail.com",
+    link: "mailto:gowthamrajezhumalai@gmail.com",
   },
   {
     icon: <FaPhone />,
@@ -45,7 +46,7 @@ export default function Contact() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) {
@@ -61,17 +62,32 @@ export default function Contact() {
     if (!formRef.current) return;
 
     try {
-      await emailjs.sendForm(
-        "service_6w8h4hi",
-        "YOUR_TEMPLATE_ID",
-        formRef.current,
-        "YOUR_PUBLIC_KEY"
-      );
+      console.log("Sending email...");
+      console.log("Form data:", new FormData(formRef.current));
+
+      await emailjs
+        .sendForm(
+          import.meta.env.VITE_SERVICE_ID || "service_id",
+          import.meta.env.VITE_TEMPLATE_ID || "template_id",
+          formRef.current,
+          import.meta.env.VITE_PUBLIC_KEY || "public_key",
+        )
+        .then(
+          (result) => {
+            console.log("Email sent successfully:", result.text);
+          },
+          (error) => {
+            console.error("Error sending email:", error.text);
+            throw new Error("Email sending failed");
+          },
+        );
 
       toast.success("Message sent successfully!");
       formRef.current.reset();
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+      toast.error(
+        "Message couldn’t be sent. Kindly  ‘mail to  gowthamrajezhumalai@gmail.com’  to proceed.",
+      );
       console.error("Error sending email:", error);
     }
   };
@@ -116,13 +132,13 @@ export default function Contact() {
             <div className="contact__form-group">
               <input
                 type="email"
-                name="email"
+                name="to_email"
                 placeholder="Your Email"
                 required
                 className="contact__input"
               />
             </div>
-            <div className="contact__form-group">
+            {/* <div className="contact__form-group">
               <input
                 type="text"
                 name="subject"
@@ -130,7 +146,7 @@ export default function Contact() {
                 required
                 className="contact__input"
               />
-            </div>
+            </div> */}
             <div className="contact__form-group">
               <textarea
                 name="message"

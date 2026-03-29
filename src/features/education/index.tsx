@@ -10,20 +10,20 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "SSLC - 82%",
-    university: "Mahendra Matriculation Hr.Sec, Namakkal.",
-    period: "2018",
-  },
-  {
-    title: "HSC - 75%",
-    university: "Mahendra Matriculation Hr.Sec, Namakkal.",
-    period: "2020",
-  },
-  {
     title: "B.Tech - Information Technology (IT) - 8.5 CGPA",
     university:
       "Dr. Mahalingam College of Engineering and Technology, Pollachi",
     period: "2020 -2024",
+  },
+  {
+    title: "HSC - 75%",
+    university: "Mahendra Matriculation Higher Secondary School, Kalipatti.",
+    period: "2020",
+  },
+  {
+    title: "SSLC - 82%",
+    university: "Mahendra Matriculation Higher Secondary School, Kalipatti.",
+    period: "2018",
   },
 ];
 
@@ -38,8 +38,10 @@ const Education = () => {
           transition={{ duration: 0.8 }}
           className="education__header"
         >
-          <h2>Education</h2>
-          <p>A timeline of my educational background and qualifications .</p>
+          <h2 className="education__title">Education</h2>
+          <p className="education__timeline">
+            A timeline of my educational background and qualifications .
+          </p>
         </motion.div>
 
         {experiences.map((exp, index) => (
@@ -58,7 +60,7 @@ const Education = () => {
             <div className="education__item-card">
               <h3 className="education__item-title">{exp.title}</h3>
               <div className="education__item-meta">
-                <span className="company">{exp.university}</span>   
+                <span className="company">{exp.university}</span>
                 <span>{exp.period}</span>
               </div>
             </div>

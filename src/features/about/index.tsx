@@ -37,24 +37,26 @@ export default function About() {
           <div className="about__grid">
             <div className="about__text">
               <p className="about__description">
-                I am a passionate Full Stack Developer with expertise in
-                building modern web applications. With a strong foundation in
-                both frontend and backend technologies, I create seamless,
-                user-friendly experiences that solve real-world problems.
+                I’m a Full Stack Developer specializing in building modern,
+                scalable web applications using technologies like React,
+                Node.js, and modern web tools. I focus on writing clean,
+                maintainable code and creating seamless user experiences.
               </p>
               <p className="about__description">
-                My journey in web development started with a curiosity about how
-                things work on the internet. Since then, I've worked on various
-                projects, always focusing on writing clean, maintainable code.
+                My journey into web development started with curiosity about how
+                the web works, and it has grown into a passion for solving
+                real-world problems through code.
               </p>
               <p className="about__description">
-                When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects.
+                I’ve worked on multiple projects and continuously explore new
+                technologies to improve my craft. When I’m not coding, I enjoy
+                experimenting with new tools and contributing to open-source
+                projects.
               </p>
             </div>
             <div className="about__stats">
               <div className="about__stat">
-                <span className="about__stat-number">1+</span>
+                <span className="about__stat-number">1.5+</span>
                 <span className="about__stat-label">Years Experience</span>
               </div>
               {/* <div className="about__stat">

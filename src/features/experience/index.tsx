@@ -1,36 +1,100 @@
 import { useEffect, useRef } from "react";
-import { FaBriefcase } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaVuejs,
+  FaBriefcase,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiJest,
+  SiRedux,
+  SiNextdotjs,
+  SiTypescript,
+  SiQuasar,
+  SiAntdesign,
+  SiExpress,
+  SiPinia,
+  SiNuxt,
+} from "react-icons/si";
 import "./styles.scss";
+// import type { IconType } from "react-icons/lib/esm/iconBase";
 
 interface ExperienceItem {
   title: string;
   company: string;
   period: string;
   description: string[];
-  technologies: string[];
+  technologies: TechItem[];
+}
+
+interface TechItem {
+  name: string;
+  icon: any;
 }
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Full Stack Developer Intern",
-    company: "Tap Academy(Ed.tech) ",
-    period: "06/2024 - 12/2024",
+    title: "Full Stack Developer",
+    company: "Dashloc ",
+    period: "11/2025 - Present",
     description: [
-      "Developed Tap Academy's website using Next.js and TypeScript during internship.",
-      "Implemented unit and integration tests using the Jest testing library.",
+      "Developed and maintained scalable web applications using Vue.js, Nuxt.js, Quasar Framework, and Pinia.",
+      "Collaborated with backend teams for seamless API integration and efficient data flow.",
+      "Built the Dashloc platform, a unified, SEO-optimized website showcasing multiple products.",
+      "Contributed to an ORM (Online Reputation Management) system to manage all social media platforms in a single dashboard.",
+      "Contributed to a Google Business Profile (GBP) management tool to handle multiple business locations from one place.",
+      "Contributed to a Microsite Builder to create client-specific websites with multiple customizable themes.",
     ],
-    technologies: [ "Next.js,", "React,", "Express.js,", "Node.js,", "TypeScript,", "Jest"],
+    technologies: [
+      { name: "Vue.js", icon: FaVuejs },
+      { name: "Nuxt.js", icon: SiNuxt },
+      { name: "Quasar", icon: SiQuasar },
+      { name: "Pinia", icon: SiPinia },
+    ],
   },
   {
     title: "Full Stack Developer",
     company: "Tap Academy(Ed.tech) ",
-    period: "01/2025 - 07/2025",
+    period: "09/2024 - 07/2025",
     description: [
-      "Contributed to key modules of a student-focused Learning Management System (LMS) including coding practice, video classes, and recorded sessions.",
-      "Implemented AI-driven features such as intelligent feedback, resume generation, and job applications.",
-      "Collaborated in building secure and scalable components using the MERN stack with TypeScript, enhancing performance and delivering a seamless user experience.",
+      "Built and optimized reusable, scalable UI components using React.js, improving LMS performance and maintainability by 30%.",
+      "Developed and integrated RESTful APIs using Node.js and Express.js for seamless frontend-backend communication.",
+      "Engineered key LMS features including Analytics Dashboard, Recruiter Access Portal, and OTP-based Authentication System.",
+      "Automated student data synchronization using cron jobs, reducing manual effort and improving system reliability.",
+      "Performed code refactoring, debugging, and performance optimization across multiple modules.",
     ],
-    technologies: ["React,", "Express.js,", "Node.js,",  "TypeScript,", "MongoDB,", "Redux-saga"],
+    technologies: [
+      { name: "React.js", icon: FaReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Ant Design", icon: SiAntdesign },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Redux", icon: SiRedux },
+    ],
+  },
+  {
+    title: "Full Stack Developer Intern",
+    company: "Tap Academy(Ed.tech) ",
+    period: "06/2024 - 09/2024",
+    description: [
+      "Developed Tap Academy's website using Next.js and TypeScript during internship.",
+      "Implemented unit and integration tests using the Jest testing library.",
+      "Learned to build responsive and user-friendly UI components ensuring cross-device compatibility.",
+      "Handled debugging and bug fixes to enhance application stability.",
+      "Followed best coding practices with guidance from team members and used Git for version control.",
+      "Learned to work effectively in a team environment.",
+    ],
+    technologies: [
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "React.js", icon: FaReact },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Jest", icon: SiJest },
+    ],
   },
 ];
 
@@ -48,7 +112,7 @@ export default function Experience() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) {
@@ -89,9 +153,10 @@ export default function Experience() {
                 </ul>
                 <div className="experience__tech">
                   {exp.technologies.map((tech, i) => (
-                    <span key={i} className="experience__tech-item">
-                      {tech}
-                    </span>
+                    <div key={i} className="experience__tech-item">
+                      <tech.icon className="experience__tech-icon" />
+                      <span className="experience__tooltip">{tech.name}</span>
+                    </div>
                   ))}
                 </div>
               </div>

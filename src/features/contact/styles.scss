@@ -1,7 +1,6 @@
-/* Contact Section Styles - Plain CSS, no mixins/includes */
 .contact {
   padding: 4rem 0;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg);
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -46,6 +45,7 @@
 .contact__info-item {
   background: var(--bg-card);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: var(--glass-blur);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
@@ -94,6 +94,7 @@
 .contact__form {
   background: var(--bg-card);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: var(--glass-blur);
   border-radius: 0.75rem;
   padding: 2rem;
   display: flex;
@@ -125,8 +126,10 @@
 }
 
 .contact__textarea {
-  min-height: 120px;
+  min-height: 150px;
   resize: vertical;
+  background: var(--bg-input) !important;
+  color: var(--text-primary) !important;
 }
 
 .contact__button {
@@ -138,7 +141,7 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     background: var(--color-primary-dark);

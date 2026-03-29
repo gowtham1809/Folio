@@ -24,7 +24,20 @@
       margin: 0 auto;
     }
   }
+  .education__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-primary);
+  }
 
+  .education__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+  }
   &__item {
     position: relative;
     padding-left: 2rem;
@@ -52,6 +65,7 @@
 
     &-card {
       background-color: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
       padding: 1.5rem;
       border-radius: 0.5rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -62,6 +76,7 @@
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 0.25rem;
+       text-align: left;
     }
 
     &-meta {
@@ -103,95 +118,4 @@
       }
     }
   }
-}
-
-/* Education Section Styles - Plain CSS, no mixins/includes */
-.education {
-  padding: 5rem 0;
-}
-.education__container {
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-.education__header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.education__header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-.education__header p {
-  color: var(--text-muted);
-  max-width: 32rem;
-  margin: 0 auto;
-}
-education__item {
-  position: relative;
-  padding-left: 2rem;
-  padding-bottom: 3rem;
-  border-left: 2px solid var(--color-primary);
-}
-education__item:last-child {
-  padding-bottom: 0;
-}
-education__item-icon {
-  position: absolute;
-  left: -9px;
-  top: 0;
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 0.6rem;
-}
-education__item-card {
-  background-color: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-education__item-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-education__item-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-education__item-meta .company {
-  color: var(--color-primary);
-  font-weight: 500;
-}
-education__item-desc {
-  list-style: disc;
-  padding-left: 1.25rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-education__item-desc li {
-  margin-bottom: 0.5rem;
-}
-education__item-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-education__item-tech span {
-  background-color: var(--bg-accent);
-  color: var(--color-primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
 }
