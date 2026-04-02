@@ -1,7 +1,10 @@
 /* Skills Section Styles - Plain CSS, no mixins/includes */
 .skills {
-  padding: 4rem 0;
+  padding-block: 4rem;
   background-color: var(--bg);
+  @media (max-width: 500px) {
+    padding-block: 2rem;
+  }
 }
 
 .skills__container {
@@ -18,6 +21,9 @@
   transition:
     opacity 0.5s ease,
     transform 0.5s ease;
+  @media (max-width: 500px) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .skills__header.visible {

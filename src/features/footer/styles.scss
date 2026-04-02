@@ -1,8 +1,11 @@
 /* Footer Section Styles - Plain CSS, no mixins/includes */
 .footer {
   background-color: var(--bg-primary);
-  padding: 3rem 0;
+  padding-block: 3rem;
   border-top: 1px solid var(--border-color);
+  @media (max-width: 500px) {
+    padding-block: 2rem;
+  }
 }
 
 .footer__container {
@@ -17,6 +20,9 @@
   align-items: center;
   gap: 2rem;
   text-align: center;
+  @media (max-width: 500px) {
+    gap: 1rem;
+  }
 }
 
 .footer__social {

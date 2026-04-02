@@ -1,5 +1,8 @@
 .education {
-  padding: 5rem 0;
+  padding-block: 4rem;
+  @media (max-width: 500px) {
+    padding-block: 2rem;
+  }
 
   &__container {
     max-width: 768px;
@@ -76,7 +79,7 @@
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 0.25rem;
-       text-align: left;
+      text-align: left;
     }
 
     &-meta {

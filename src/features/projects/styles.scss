@@ -1,13 +1,17 @@
 /* Projects Section Styles - SCSS */
 
 .projects {
-  padding: 4rem 0;
+  padding-block: 4rem;
   background-color: var(--bg-primary);
   opacity: 0;
   transform: translateY(20px);
   transition:
     opacity 0.5s ease,
     transform 0.5s ease;
+
+  @media (max-width: 500px) {
+    padding-block: 2rem;
+  }
 
   &.visible {
     opacity: 1;
@@ -74,12 +78,12 @@
     border-radius: 0.75rem 0.75rem 0 0;
     aspect-ratio: 16 / 9;
 
-  &__iframe-wrapper {
-    width: 1920px;  // pretend full desktop width
-    height: 1080px;
-    transform: scale(0.35); // 🔥 adjust this (0.3–0.5)
-    transform-origin: top left;
-  }
+    &__iframe-wrapper {
+      width: 1920px; // pretend full desktop width
+      height: 1080px;
+      transform: scale(0.35); // 🔥 adjust this (0.3–0.5)
+      transform-origin: top left;
+    }
     &__iframe {
       width: 100%;
       height: 100%;
@@ -92,7 +96,7 @@
       .projects__iframe {
         transform: scale(1.05);
       }
-    } 
+    }
   }
 
   &__image {

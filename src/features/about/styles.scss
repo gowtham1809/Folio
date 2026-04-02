@@ -1,6 +1,6 @@
 /* About Section Styles - Plain CSS, no mixins/includes */
 .about {
-  padding: 4rem 0;
+  padding-block: 4rem;
   background-color: var(--bg-primary);
   opacity: 0;
   transform: translateY(20px);
@@ -11,6 +11,9 @@
   &.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  @media (max-width: 500px) {
+    padding-block: 2rem;
   }
 }
 

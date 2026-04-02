@@ -59,7 +59,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="footer__copyright">
-            © {currentYear} Gowthamraj. All rights reserved. Built with Love
+            © {currentYear} Gowthamraj. All rights reserved. Designed and developed by me.
           </p>
         </div>
       </div>

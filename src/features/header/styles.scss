@@ -28,9 +28,13 @@
 .header__logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #1e73be, #6a0dad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header__logo:hover {
@@ -101,5 +105,7 @@
 }
 
 .header__theme-toggle:hover {
+  background-color: transparent;
+
   transform: rotate(15deg);
 }

@@ -127,6 +127,9 @@
   color: var(--color-primary);
   position: relative;
   display: inline-block;
+  background: linear-gradient(90deg, #1E73BE, #6A0DAD);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   &::after {
     content: "";
@@ -135,7 +138,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: var(--color-primary);
+    background: linear-gradient(90deg, #1E73BE, #6A0DAD);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;

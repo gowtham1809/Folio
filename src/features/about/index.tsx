@@ -38,20 +38,24 @@ export default function About() {
             <div className="about__text">
               <p className="about__description">
                 I’m a Full Stack Developer specializing in building modern,
-                scalable web applications using technologies like React,
-                Node.js, and modern web tools. I focus on writing clean,
-                maintainable code and creating seamless user experiences.
+                scalable, and high-performance web applications using
+                technologies like React.js, Next.js, Vue.js, Nuxt.js, Node.js, and
+                Express.js. I focus on writing clean, maintainable code and
+                delivering seamless user experiences.
               </p>
+
               <p className="about__description">
-                My journey into web development started with curiosity about how
-                the web works, and it has grown into a passion for solving
-                real-world problems through code.
+                I have hands-on experience developing end-to-end applications,
+                designing RESTful APIs, and working with databases such as
+                MongoDB and PostgreSQL. I enjoy solving real-world problems and
+                turning ideas into efficient digital solutions.
               </p>
+
               <p className="about__description">
-                I’ve worked on multiple projects and continuously explore new
-                technologies to improve my craft. When I’m not coding, I enjoy
-                experimenting with new tools and contributing to open-source
-                projects.
+                Currently, I am working on real-world products including
+                business platforms, ORM systems, and microsite builders. I
+                continuously explore new technologies to improve my skills and
+                build impactful applications.
               </p>
             </div>
             <div className="about__stats">

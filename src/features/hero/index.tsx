@@ -44,8 +44,8 @@ export default function Hero() {
             Full Stack Developer
           </h1>
           <p className="hero__description">
-            Explore my portfolio and reach out to discuss opportunities or ways
-            we can work together.
+            Passionate about building modern web experiences. Explore my work
+            and let’s collaborate on projects.
           </p>
           <div className="hero__social">
             <a
